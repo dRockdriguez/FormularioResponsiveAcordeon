@@ -1,0 +1,380 @@
+<div class=""  ngClass.sm="col-9 container" ngClass.md="col-9 container" ngClass.lg="col-9 container" ngClass.xl="col-9 container">
+<div class="cabeceraForm">
+  Completa la Solicitud
+</div>
+<form  [formGroup]="forma"  (ngSubmit)="submit()">
+  <!--Datos Identificativos-->
+  <div  ngClass.xs="accordion1" ngClass.sm="grande" ngClass.md="grande" ngClass.lg="grande" ngClass.xl="grande" class="active">
+    <div>Datos identificativos</div>
+    <div><i fxShow.xs="true" fxHide class="fa fa-chevron-circle-down" style="color:white; font-size:30px;" aria-hidden="true"> </i></div>
+  </div>
+  <div  class="panel" >
+      <div class="col-sm-12" ngClass.sm="flexbox-container" ngClass.md="flexbox-container" ngClass.lg="flexbox-container" ngClass.xl="flexbox-container">
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">NIF/NIE</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo"  id="nombre" placeholder="Escriba su nº de documento" formControlName="docu">
+            </div>
+          </div>
+        </div>
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="ape1" class="col-12 col-md-6 col-form-label">Tipo de Documento</label>
+            <div class="col-12 col-md-6">
+              <select  class="form-control bordeabajo"  formControlName="tipdocu">
+                <option value="nif">NIF</option>
+                <option value="NIE">NIE</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!--Datos Personales-->
+  <div  ngClass.xs="accordion1" ngClass.sm="grande" ngClass.md="grande" ngClass.lg="grande" ngClass.xl="grande">
+    <div>Datos Personales</div>
+    <div><i fxShow.xs="true" fxHide class="fa fa-chevron-circle-down" style="color:white; font-size:30px;" aria-hidden="true"> </i></div>
+  </div>
+  <div  class="panel" >
+      <div class="col-sm-12" ngClass.sm="flexbox-container" ngClass.md="flexbox-container" ngClass.lg="flexbox-container" ngClass.xl="flexbox-container">
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Nombre</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo"  id="nombre" placeholder="Manolo..." formControlName="nombre">
+            </div>
+
+            <div
+            *ngIf="forma.get('nombre').errors &&
+                  forma.get('nombre').dirty &&
+                  forma.get('nombre').errors.valido">
+                  Prueba desde validador custom
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label for="ape1" class="col-12 col-md-6 col-form-label">Primer Apellido</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="ape1"placeholder="Pérez..." formControlName="ape1">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Segundo Apellido</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="ape2" placeholder="Pérez..." formControlName="ape2">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Nacionalidad</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" placeholder="Escriba su nacionalidad..." formControlName="nacionalidad">
+                <option value="esp">España</option>
+                <option value="mur">Murcia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Fecha Nacimiento</label>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control bordeabajo" id="fecha" formControlName="fecha">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Sexo</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo"  formControlName="sexo">
+                <option value="m">Mujer</option>
+                <option value="h">Hombre</option>
+                <option value="z">Zapato</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Estado civil</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo"  formControlName="civil">
+                <option value="m">Soltero</option>
+                <option value="h">Casado</option>
+                <option value="z">Tengo muchos gatos</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">País de nacimiento</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo"  formControlName="paisnaciment">
+                <option value="m">España</option>
+                <option value="h">Catalunya</option>
+                <option value="z">Albacete</option>
+              </select>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+  </div>
+
+  <!--Datos de contacto-->
+  <div  ngClass.xs="accordion1" ngClass.sm="grande" ngClass.md="grande" ngClass.lg="grande" ngClass.xl="grande">
+    <div>Datos de contacto</div>
+    <div><i fxShow.xs="true" fxHide class="fa fa-chevron-circle-down" style="color:white; font-size:30px;" aria-hidden="true"> </i></div>
+  </div>
+  <div  class="panel">
+      <div class="col-sm-12" ngClass.sm="flexbox-container" ngClass.md="flexbox-container" ngClass.lg="flexbox-container" ngClass.xl="flexbox-container">
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Tipo vía</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" placeholder="Tipo vía..." formControlName="tipoVia">
+                <option value="cl">Calle</option>
+                <option value="pa">Paseo</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape1" class="col-12 col-md-6 col-form-label">Domicilio</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="domicilio"placeholder="Domicilio..." formControlName="domicilio">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Número</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="ape2" placeholder="138" formControlName="numero">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Otros (bloque, piso, puerta)</label>
+            <div class="col-12 col-md-6">
+                <input type="text" class="form-control bordeabajo" placeholder="Bloque, piso puerta..." formControlName="otros">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Código postal</label>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control bordeabajo" id="postal" placeholder="455662..." formControlName="codigoPostal">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Municipio</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" placeholder="Tipo vía..." formControlName="tipoVia">
+                <option value="cl">Albacete</option>
+                <option value="pa">Almansa</option>
+                <option value="mm">Miaumiau</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Provincia</label>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control bordeabajo" id="postal" placeholder="Provincia..." formControlName="provincia">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Teléfono fijo</label>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control bordeabajo" id="postal" placeholder="91222222.." formControlName="telFijo">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Teléfono móvil</label>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control bordeabajo" id="postal" placeholder="652524476.." formControlName="telMovil">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Dirección de Email</label>
+            <div class="col-12 col-md-6">
+              <input type="email" class="form-control bordeabajo" id="postal" placeholder="manolo@prestamos.com" formControlName="correo">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Tipo de vivienda</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" placeholder="Tipo vía..." formControlName="tipoVia">
+                <option value="cl">Piso</option>
+                <option value="pa">Casa</option>
+                <option value="mm">Chabolo</option>
+                <option value="af">Cajero del bbva</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Fecha entrada domicilio</label>
+            <div class="col-12 col-md-6">
+              <input type="date" class="form-control bordeabajo" id="postal" formControlName="entradaDom">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+  </div>
+
+  <!--Datos laborales -->
+  <div  ngClass.xs="accordion1" ngClass.sm="grande" ngClass.md="grande" ngClass.lg="grande" ngClass.xl="grande">
+    <div>Datos laborales</div>
+    <div><i fxShow.xs="true" fxHide class="fa fa-chevron-circle-down" style="color:white; font-size:30px;" aria-hidden="true"> </i></div>
+  </div>
+  <div  class="panel" >
+      <div class="col-sm-12" ngClass.sm="flexbox-container" ngClass.md="flexbox-container" ngClass.lg="flexbox-container" ngClass.xl="flexbox-container">
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Ocupacion</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" formControlName="ocupacion">
+                <option value="cl">Chatarrero</option>
+                <option value="pa">Torero</option>
+                <option value="ft">Futbolista</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Tipo de contrato</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" formControlName="contrato">
+                <option value="cl">Indefinido</option>
+                <option value="pa">Temporal</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Cargo en la empresa</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" formControlName="contrato">
+                <option value="cl">Jefe Supremo</option>
+                <option value="pa">Camarero</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Inicio del contrato</label>
+            <div class="col-12 col-md-6">
+                <input type="date" class="form-control bordeabajo" formControlName="inicioContrato">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ape2" class="col-12 col-md-6 col-form-label">Fin del contrato</label>
+            <div class="col-12 col-md-6">
+                <input type="date" class="form-control bordeabajo" formControlName="finContrato">
+            </div>
+          </div>
+
+        </div>
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Empresa</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" placeholder="Google..." formControlName="empresa">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Teléfono Empresa</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" placeholder="91222222.." formControlName="telEmpresa">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">CIF</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="cif">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Dirección</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="dirEmpresa">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="fecha" class="col-12 col-md-6 col-form-label">Ingresos netos mes</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="ingMes">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+  </div>
+
+
+  <!--Datos Cónyuge -->
+  <div  ngClass.xs="accordion1" ngClass.sm="grande" ngClass.md="grande" ngClass.lg="grande" ngClass.xl="grande">
+    <div>Datos Cónyuge (opcional)</div>
+    <div><i fxShow.xs="true" fxHide class="fa fa-chevron-circle-down" style="color:white; font-size:30px;" aria-hidden="true"> </i></div>
+  </div>
+  <div  class="panel" >
+      <div class="col-sm-12" ngClass.sm="flexbox-container" ngClass.md="flexbox-container" ngClass.lg="flexbox-container" ngClass.xl="flexbox-container">
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">NIF/NIE</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="nif">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Tipo de documento</label>
+            <div class="col-12 col-md-6">
+              <select class="form-control bordeabajo" formControlName="tipDocuconyuge">
+                <option value="nif">NIF</option>
+                <option value="nie">NIE</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Segundo apellido</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="segundoApellido">
+            </div>
+          </div>
+        </div>
+        <div ngClass.sm="columna" ngClass.md="columna" ngClass.lg="columna" ngClass.xl="columna">
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Nombre</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="nombreconyu">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nombre" class="col-12 col-md-6 col-form-label">Primer apellido</label>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control bordeabajo" id="postal" formControlName="primerApellido">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+  </div>
+
+  <br>
+  <div style="display:flex;justify-content:flex-end;">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+
+</form>
+<br>
+<br>
+</div>
